@@ -21,7 +21,7 @@ namespace UltimateGenSearch.Controllers.Api
             this._searchService = searchService;
         }
 
-        public HttpResponseMessage Get(Query query)
+        public HttpResponseMessage Get([FromUri] Query query)
         {
             try
             {
