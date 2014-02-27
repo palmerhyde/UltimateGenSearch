@@ -5,12 +5,9 @@ using System.Web;
 
 namespace UltimateGenSearch.Services.Login
 {
-    using System.Net;
-
-    public class NullLogin : ILogin
+    public class VendorNames
     {
-        public void Login(CookieContainer cookies)
-        {
-        }
+        public const string ACOM = "Ancestry";
+        public const string FIND_MY_PAST = "FindMyPast";
     }
 }
