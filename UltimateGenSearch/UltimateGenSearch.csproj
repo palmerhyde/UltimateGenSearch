@@ -161,8 +161,10 @@
     <Compile Include="Services\Aggregator\IAggregator.cs" />
     <Compile Include="Services\Aggregator\SimpleAggregator.cs" />
     <Compile Include="Services\Connections\ConnectionFactory.cs" />
+    <Compile Include="Services\Connections\IConnectionFactory.cs" />
     <Compile Include="Services\ISearchService.cs" />
     <Compile Include="Services\Login\ILogin.cs" />
+    <Compile Include="Services\Scrapers\AcomScraper.cs" />
     <Compile Include="Services\Scrapers\DummyScraper.cs" />
     <Compile Include="Services\Scrapers\IScraper.cs" />
     <Compile Include="Services\SearchService.cs" />
