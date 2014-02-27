@@ -24,7 +24,7 @@
         /// <summary>
         /// The search template
         /// </summary>
-        private const string SEARCH_TEMPLATE = "http://search.ancestry.co.uk/cgi-bin/sse.dll?gl=ROOT_CATEGORY&rank=1&new=1&so=3&MSAV=1&msT=1&gss=ms_r_f-2_s&gsfn={0}&gsln={1}&msbdy={2}&msypn__ftp={3}&cpxt=1&catBucket=rstp&uidh=000&cp=0";
+        private const string SEARCH_TEMPLATE = "http://search.ancestry.com/cgi-bin/sse.dll?gl=ROOT_CATEGORY&rank=1&new=1&so=3&MSAV=1&msT=1&gss=ms_r_f-2_s&gsfn={0}&gsln={1}&msbdy={2}&msypn__ftp={3}&cpxt=1&catBucket=rstp&uidh=000&cp=0";
 
 
         /// <summary>
