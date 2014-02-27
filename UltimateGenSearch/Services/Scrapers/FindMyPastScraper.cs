@@ -29,6 +29,8 @@ namespace UltimateGenSearch.Services.Scrapers
         
         }
 
+        private readonly  string[] DocumentTypes = new string[]{"IMG", "PDF", "TXT" };
+
         public override IList<Record> Search(Query query, int pages)
         {
             var results = new List<Record>();
@@ -73,16 +75,19 @@ namespace UltimateGenSearch.Services.Scrapers
                             var sourceName = GetTextValue(cells[5].InnerText);
                             string sourceLink = null;
 
-                            var sourceCell = cells[7].SelectSingleNode(".//div[@class='IMG']/a");
-                            if (sourceCell == null)
+
+                            HtmlNode sourceCell = null;
+                            foreach (var type in DocumentTypes)
                             {
-                                // link to transcription
-                                sourceCell = cells[7].SelectSingleNode(".//div[@class='TXT']/a");
+                                sourceCell = cells[7].SelectSingleNode(string.Format(".//div[@class='{0}']/a", type));
+                                if (sourceCell != null) 
+                                    break;
                             }
+
 
                             if (sourceCell != null)
                             {
-                                sourceLink = RECORD_DOMAIN + sourceCell.Attributes["href"].Value;
+                                sourceLink = RECORD_DOMAIN + this.GetTextValue(sourceCell.Attributes["href"].Value);
                             }
 
                             record.FirstName = fn;
