@@ -64,3 +64,78 @@ textarea {
     padding: 0;
     margin: 5px;
 }
+.panel.Ancestry .panel-heading, .nav.nav-sidebar li.anc:hover a {
+    background-color: #d6e9c6;
+    background-image: none;
+}
+
+.panel.FindMyPast .panel-heading, .nav.nav-sidebar li.fmp:hover a {
+    background-color: #428bca;
+    background-image: none;
+    color: #fff;
+}
+
+.panel.MyHeritage .panel-heading, .nav.nav-sidebar li.mh:hover a {
+    background-color: #faebcc;
+    background-image: none;
+}
+
+.nav.nav-sidebar li:hover {
+    cursor: pointer;
+}
+
+.center-block {
+    margin-left: auto;
+    margin-right: auto;
+    width: 20rem;
+}
+
+.center-block.lrg {
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+}
+
+.center-block.lrg h1, .center-block.lrg h3 {
+    text-align:center;
+}
+
+.large-icon {
+    font-size: 20rem;
+    margin-left: auto;
+    margin-right: auto;
+    -webkit-transform-origin: 50% 39%;
+    transform-origin:50% 39%;
+    -ms-transform-origin:50% 39%; /* IE 9 */
+    -webkit-animation: spin .9s infinite linear;
+    -moz-animation: spin .9s infinite linear;
+    -o-animation: spin .9s infinite linear;
+    animation: spin .9s infinite linear;
+}
+
+@-moz-keyframes spin {
+  from {
+    -moz-transform: rotate(0deg);
+  }
+  to {
+    -moz-transform: rotate(360deg);
+  }
+}
+
+@-webkit-keyframes spin {
+  from {
+    -webkit-transform: rotate(0deg);
+  }
+  to {
+    -webkit-transform: rotate(360deg);
+  }
+}
+
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
