@@ -168,6 +168,7 @@
     <Compile Include="Services\Scrapers\AcomScraper.cs" />
     <Compile Include="Services\Scrapers\BaseScraper.cs" />
     <Compile Include="Services\Scrapers\DummyScraper.cs" />
+    <Compile Include="Services\Scrapers\FamilySearchScraper.cs" />
     <Compile Include="Services\Scrapers\FindMyPastScraper.cs" />
     <Compile Include="Services\Scrapers\IScraper.cs" />
     <Compile Include="Services\SearchService.cs" />

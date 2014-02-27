@@ -25,6 +25,7 @@ namespace UltimateGenSearch.App_Start
             //Container.RegisterType<IScraper, DummyScraper>("DummyScraper");
             Container.RegisterType<IScraper, AcomScraper>("AcomScraper");
             Container.RegisterType<IScraper, FindMyPastScraper>("FindMyPastScraper");
+            Container.RegisterType<IScraper, FamilySearchScraper>("FamilySearchScraper");
 
 
             Container.RegisterType<IAggregator, SimpleAggregator>();

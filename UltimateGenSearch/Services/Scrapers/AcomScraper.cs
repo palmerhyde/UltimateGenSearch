@@ -63,7 +63,7 @@
 
             var queryString = string.Format(SEARCH_TEMPLATE, firstName, lastName, date, place);
 
-            using (var client = this.Factory.CreateClient(this.Login))
+            using (var client = this.Factory.CreateClient(this.Login, null))
             {
                 var response = client.GetAsync(queryString).Result;
                 if (response.IsSuccessStatusCode)
