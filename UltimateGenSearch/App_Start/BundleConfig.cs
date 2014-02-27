@@ -32,13 +32,13 @@ namespace UltimateGenSearch
                         "~/Scripts/libs/bootstrap/bootstrap.js"));
 
             bundles.Add(new ScriptBundle("~/bundles/angular").Include(
-                        "~/Scripts/libs/angular/angular.js*",
-                        "~/Scripts/libs/angular/angular-route.js*",
-                        "~/Scripts/libs/angular/angular-bootstrap.js*",
-                        "~/Scripts/libs/angular/angular-cookies.js*",
-                        "~/Scripts/libs/angular/angular-loader.js*",
-                        "~/Scripts/libs/angular/angular-resource.js*",
-                        "~/Scripts/libs/angular/angular-santize.js*"));
+                        "~/Scripts/libs/angular/angular.js",
+                        "~/Scripts/libs/angular/angular-route.js",
+                        "~/Scripts/libs/angular/angular-bootstrap.js",
+                        "~/Scripts/libs/angular/angular-cookies.js",
+                        "~/Scripts/libs/angular/angular-loader.js",
+                        "~/Scripts/libs/angular/angular-resource.js",
+                        "~/Scripts/libs/angular/angular-santize.js"));
 
             bundles.Add(new ScriptBundle("~/bundles/app").IncludeDirectory(
                         "~/Scripts/app/", "*.js", true));
