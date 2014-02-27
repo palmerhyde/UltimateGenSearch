@@ -7,6 +7,13 @@ namespace UltimateGenSearch.Models
 {
     public class Record
     {
+        public Record()
+        {
+            Events = new List<Event>();
+        }
+
+        public string Vendor { get; set; }
+
         public string FirstName { get; set; }
 
         public string LastName { get; set; }

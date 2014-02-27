@@ -24,13 +24,15 @@ namespace UltimateGenSearch.App_Start
 
             //Container.RegisterType<IScraper, DummyScraper>("DummyScraper");
             Container.RegisterType<IScraper, AcomScraper>("AcomScraper");
+            Container.RegisterType<IScraper, FindMyPastScraper>("FindMyPastScraper");
+
 
             Container.RegisterType<IAggregator, SimpleAggregator>();
 
             Container.RegisterType<ISearchService, SearchService>();
 
             Container.RegisterType<IConnectionFactory, ConnectionFactory>();
-            Container.RegisterType<ILogin, SimpleLogin>();
+            Container.RegisterType<ILogin, NullLogin>();
 
 
             config.DependencyResolver = new Unity.WebApi.UnityDependencyResolver(Container);

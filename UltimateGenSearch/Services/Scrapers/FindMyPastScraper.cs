@@ -11,7 +11,7 @@ using UltimateGenSearch.Services.Login;
 
 namespace UltimateGenSearch.Services.Scrapers
 {
-    public class FindMyPastScraper : IScraper
+    public class FindMyPastScraper : BaseScraper
     {
         /*
          * {0} FirstName
@@ -23,33 +23,20 @@ namespace UltimateGenSearch.Services.Scrapers
 
         private const string RECORD_DOMAIN = "http://search.findmypast.com";
 
-        public IConnectionFactory Factory { get; set; }
-
-        public ILogin Login { get; set; }
-
-        public FindMyPastScraper(IConnectionFactory factory, ILogin login)
+     
+        public FindMyPastScraper(IConnectionFactory factory, ILogin login) : base(factory, login)
         {
-            if (factory == null)
-            {
-                throw new ArgumentNullException("factory");
-            }
-
-            if (login == null)
-            {
-                throw new ArgumentNullException("login");
-            }
-
-            this.Factory = factory;
-
-            this.Login = login;
+        
         }
 
-        public IList<Record> Search(Query query, int pages)
+        public override IList<Record> Search(Query query, int pages)
         {
             var results = new List<Record>();
 
-            var firstName = HttpUtility.UrlEncode(query.Name.Split(' ').First());
-            var lastName = HttpUtility.UrlEncode(query.Name.Split(' ').Last());
+            var names = this.GetFirstAndLastNames(query.Name);
+
+            var firstName = names[0];
+            var lastName = names[1];
             var date = HttpUtility.UrlEncode(query.Date);
             var place = HttpUtility.UrlEncode(query.Place);
 
@@ -70,20 +57,20 @@ namespace UltimateGenSearch.Services.Scrapers
 
                     foreach (var row in resultRows)
                     {
-                        var record = new Record();
+                        var record = new Record() { Vendor = "FindMyPast" }; 
 
                         var cells = row.SelectNodes("./td");
                         if (cells.Count > 7)
                         {
 
-                            var ln = CleanupString(cells[0].InnerText);
-                            var fn = CleanupString(cells[1].InnerText);
+                            var ln = GetTextValue(cells[0].InnerText);
+                            var fn = GetTextValue(cells[1].InnerText);
 
-                            var born = CleanupString(cells[2].InnerText);
-                            var died = CleanupString(cells[3].InnerText);
+                            var born = GetTextValue(cells[2].InnerText);
+                            var died = GetTextValue(cells[3].InnerText);
 
 
-                            var sourceName = CleanupString(cells[5].InnerText);
+                            var sourceName = GetTextValue(cells[5].InnerText);
                             string sourceLink = null;
 
                             var sourceCell = cells[7].SelectSingleNode(".//div[@class='IMG']/a");
@@ -126,12 +113,6 @@ namespace UltimateGenSearch.Services.Scrapers
             return results;
         }
 
-        private string CleanupString(string value)
-        {
-            if (string.IsNullOrEmpty(value))
-                return value;
 
-            return value.Trim();
-        }
     }
 }

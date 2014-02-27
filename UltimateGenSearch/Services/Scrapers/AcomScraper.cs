@@ -13,7 +13,7 @@
     using UltimateGenSearch.Services.Connections;
     using UltimateGenSearch.Services.Login;
 
-    public class AcomScraper : IScraper
+    public class AcomScraper : BaseScraper
     {
         /*
          * {0} FirstName
@@ -26,21 +26,6 @@
         /// </summary>
         private const string SEARCH_TEMPLATE = "http://search.ancestry.co.uk/cgi-bin/sse.dll?gl=ROOT_CATEGORY&rank=1&new=1&so=3&MSAV=1&msT=1&gss=ms_r_f-2_s&gsfn={0}&gsln={1}&msbdy={2}&msypn__ftp={3}&cpxt=1&catBucket=rstp&uidh=000&cp=0";
 
-        /// <summary>
-        /// Gets or sets the factory.
-        /// </summary>
-        /// <value>
-        /// The factory.
-        /// </value>
-        public IConnectionFactory Factory { get; set; }
-
-        /// <summary>
-        /// Gets or sets the login.
-        /// </summary>
-        /// <value>
-        /// The login.
-        /// </value>
-        public ILogin Login { get; set; }
 
         /// <summary>
         /// Initializes a new instance of the <see cref="AcomScraper"/> class.
@@ -52,21 +37,9 @@
         /// or
         /// login
         /// </exception>
-        public AcomScraper(IConnectionFactory factory, ILogin login)
+        public AcomScraper(IConnectionFactory factory, ILogin login) : base(factory, login)
         {
-            if (factory == null)
-            {
-                throw new ArgumentNullException("factory");
-            }
-
-            if (login == null)
-            {
-                throw new ArgumentNullException("login");
-            }
-
-            this.Factory = factory;
-
-            this.Login = login;
+        
         }
 
         /// <summary>
@@ -76,7 +49,7 @@
         /// <param name="pages">The pages.</param>
         /// <returns></returns>
         /// <exception cref="System.ApplicationException">Ancestry.com returned an error</exception>
-        public IList<Record> Search(Query query, int pages)
+        public override IList<Record> Search(Query query, int pages)
         {
             var results = new List<Record>();
 
@@ -102,7 +75,7 @@
 
                     foreach (var row in resultRows)
                     {
-                        var record = new Record();
+                        var record = new Record() { Vendor = "Ancestry" };
 
                         var sourceCell = row.SelectSingleNode("./td[2]");
 
@@ -126,7 +99,6 @@
 
                         var events = recordCell.SelectNodes("./table/tr[position()>1]");
 
-                        var eventList = new List<Event>();
                         foreach (var evt in events.Where(e => e.ChildNodes.Count() > 1))
                         {
                             var e = new Event { Name = GetTextValue(evt.FirstChild.InnerText, ":") };
@@ -145,10 +117,8 @@
                                     e.Place = eventData[0];
                                 }
                             }
-                            eventList.Add(e);
+                            record.Events.Add(e);
                         }
-
-                        record.Events = eventList;
 
                         results.Add(record);
                     }
@@ -160,45 +130,6 @@
             }
 
             return results;
-        }
-
-
-        /// <summary>
-        /// Gets the text value from an HTML string
-        /// </summary>
-        /// <param name="htmlValue">The HTML value.</param>
-        /// <param name="stripChars">The characters to strip out from the resulting string.</param>
-        /// <returns></returns>
-        public string GetTextValue(string htmlValue, params string[] stripChars)
-        {
-            var result = HttpUtility.HtmlDecode(htmlValue).Trim();
-            return stripChars == null ? result : stripChars.Aggregate(result, (current, c) => current.Replace(c, ""));
-        }
-
-        /// <summary>
-        /// Gets the first and last names.
-        /// </summary>
-        /// <param name="firstlastname">The firstlastname.</param>
-        /// <returns></returns>
-        public string[] GetFirstAndLastNames(string firstlastname)
-        {
-            var lastName = "";
-            var firstName = "";
-            if (!string.IsNullOrEmpty(firstlastname))
-            {
-                var pieces = firstlastname.Split(' ');
-
-                if (pieces.Length == 1)
-                {
-                    firstName = pieces[0];
-                }
-                else
-                {
-                    firstName = string.Join(" ", pieces.Take(pieces.Count() - 1));
-                    lastName = pieces.Last();
-                }
-            }
-            return new[] { firstName, lastName };
         }
     }
 }
