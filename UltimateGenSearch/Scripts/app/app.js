@@ -1,1 +1,1 @@
-﻿
+﻿var ugsApp = angular.module('ugsApp', []);

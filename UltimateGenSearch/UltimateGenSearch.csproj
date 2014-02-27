@@ -165,6 +165,7 @@
     <Compile Include="Services\ISearchService.cs" />
     <Compile Include="Services\Login\ILogin.cs" />
     <Compile Include="Services\Login\NullLogin.cs" />
+    <Compile Include="Services\Login\SimpleLogin.cs" />
     <Compile Include="Services\Scrapers\AcomScraper.cs" />
     <Compile Include="Services\Scrapers\DummyScraper.cs" />
     <Compile Include="Services\Scrapers\FindMyPastScraper.cs" />
