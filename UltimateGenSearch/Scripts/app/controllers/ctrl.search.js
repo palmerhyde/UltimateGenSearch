@@ -8,7 +8,7 @@
     };
 
     $scope.search = function (_model) {
-        $http.get('/Api/Search?Name=' + _model.Who + '&Date=' + _model.When + '&Place=' + _model.Where).then(function (data) {
+        $http.get('/Api/Search?Name=' + _model.who + '&Date=' + _model.when + '&Place=' + _model.where).then(function (data) {
             for (var i = 0; i < data.data.length; i++) {
                 $scope.records.push(data.data[i]);
             }
