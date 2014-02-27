@@ -10,8 +10,9 @@ namespace UltimateGenSearch.Models
         public string FirstName { get; set; }
 
         public string LastName { get; set; }
-
-
+        
         public IList<Event> Events { get; set; }
+
+        public Source Source { get; set; }
     }
 }
