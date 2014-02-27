@@ -75,9 +75,12 @@
                         
                         var recordCell = row.ChildNodes[2];
 
-                        var recordNames = recordCell.SelectSingleNode("table/tbody[0]/span[@class='srchSelfName']/span[@class='srchMatch']");
-                        record.FirstName = recordNames.FirstChild.InnerText;
-                        record.LastName = recordNames.LastChild.InnerText;
+                        var recordNames = recordCell.SelectNodes("table/tbody[0]/span[@class='srchSelfName']/span[@class='srchMatch']");
+                        if (recordNames.Any())
+                        {
+                            record.FirstName = recordNames.First().InnerText;
+                            record.LastName = recordNames.Last().InnerText;
+                        }
                     }
                 }
                 else
