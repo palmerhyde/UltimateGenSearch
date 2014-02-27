@@ -11,6 +11,9 @@ using UltimateGenSearch.Services.Scrapers;
 
 namespace UltimateGenSearch.App_Start
 {
+    using UltimateGenSearch.Services.Connections;
+    using UltimateGenSearch.Services.Login;
+
     public static class DependencyConfig
     {
         internal static IUnityContainer Container { get; private set; }
@@ -19,11 +22,16 @@ namespace UltimateGenSearch.App_Start
         {
             Container = new UnityContainer();
 
-            Container.RegisterType<IScraper, DummyScraper>("DummyScraper");
+            //Container.RegisterType<IScraper, DummyScraper>("DummyScraper");
+            Container.RegisterType<IScraper, AcomScraper>("AcomScraper");
 
             Container.RegisterType<IAggregator, SimpleAggregator>();
 
             Container.RegisterType<ISearchService, SearchService>();
+
+            Container.RegisterType<IConnectionFactory, ConnectionFactory>();
+            Container.RegisterType<ILogin, SimpleLogin>();
+
 
             config.DependencyResolver = new Unity.WebApi.UnityDependencyResolver(Container);
         }
