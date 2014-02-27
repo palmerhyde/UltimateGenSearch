@@ -16,7 +16,6 @@
 Licensed under the Apache License, Version 2.0 (the "License");
 you may not use this file except in compliance with the License.</summary>
     <releaseNotes>Twitter.Bootstrap has moved to Bootstrap! Installing this update will automatically install the new package  and open a readme explaining the transition.</releaseNotes>
-    <copyright />
     <language>en-US</language>
     <tags>twitter css css3 html5 less jquery bootstrap responsive</tags>
     <dependencies>
