@@ -59,3 +59,8 @@ textarea {
 .validation-summary-valid {
     display: none;
 }
+
+.panel .no-pad {
+    padding: 0;
+    margin: 5px;
+}
