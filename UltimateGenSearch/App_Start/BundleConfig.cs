@@ -23,11 +23,10 @@ namespace UltimateGenSearch
             bundles.Add(new ScriptBundle("~/bundles/modernizr").Include(
                         "~/Scripts/libs/modernizer/modernizr-*"));
 
-            bundles.Add(new StyleBundle("~/Content/css").Include("~/Content/site.css"));
-
-            bundles.Add(new StyleBundle("~/Content/bootstrap").Include(
-                        "~/Content/bootstrap/bootstrap.min.css",
-                        "~/Content/bootstrap/bootstrap-theme.min.css"));
+            bundles.Add(new StyleBundle("~/Content/css").Include(
+                "~/Content/site.css",
+                "~/Content/bootstrap/bootstrap.min.css",
+                "~/Content/bootstrap/bootstrap-theme.min.css"));
 
             bundles.Add(new ScriptBundle("~/bundles/bootstrap").Include(
                         "~/Scripts/libs/bootstrap/bootstrap.js"));
