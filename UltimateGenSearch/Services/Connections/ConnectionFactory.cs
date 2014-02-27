@@ -1,16 +1,12 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Net.Http;
-using System.Web;
-
-using UltimateGenSearch.Services.Login;
-
-namespace UltimateGenSearch.Services
+﻿namespace UltimateGenSearch.Services.Connections
 {
-    public static class ConnectionFactory
+    using System.Net.Http;
+
+    using UltimateGenSearch.Services.Login;
+
+    public class ConnectionFactory : IConnectionFactory
     {
-        public static HttpClient CreateClient(ILogin login)
+        public HttpClient CreateClient(ILogin login)
         {
             // TODO: perform login to a service and return an http client with cookies
 
