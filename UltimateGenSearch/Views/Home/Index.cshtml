@@ -1,1 +1,48 @@
-﻿<h1>Ultimate Gen Search</h1>
+﻿<div class="navbar navbar-inverse" role="navigation">
+    <div class="container-fluid">
+        <div class="navbar-header">
+            <a class="navbar-brand" href="#"><span class="glyphicon glyphicon-user"><span class="glyphicon glyphicon-map-marker"><span class="glyphicon glyphicon-calendar"></a>
+        </div>
+        <form class="navbar-form">
+            <input type="text" class="form-inline input-sm" id="inputWho" placeholder="who">
+            <input type="text" class="form-inline input-sm" id="inputWhere" placeholder="where">
+            <input type="text" class="form-inline input-sm" id="inputWhen" placeholder="when">
+            <button type="submit" class="btn btn-primary"><span class="glyphicon glyphicon-search"></span></button>
+        </form>
+    </div>
+</div>
+
+<div class="container-fluid" ng-controller="SearchController">
+    <div class="row">
+
+        <div class="col-sm-2 sidebar">
+            <ul class="nav nav-sidebar">
+                <li><a ng-click="setFilter('Ancestry')">Ancestry</a></li>
+                <li><a ng-click="setFilter('MyHeritage')">MyHeritage</a></li>
+                <li><a ng-click="setFilter('FindMyPast')">FindMyPast</a></li>
+            </ul>
+        </div>
+
+
+        <div class="panel">
+            <div class="row">
+                <div class="panel panel-default col-sm-2 no-pad" ng-repeat="rec in records track by $index | filter: { Source.Name: filterBy }">
+                    <div class="panel-heading">
+                        <h3 class="panel-title">{{rec.Source.Name}}</h3>
+                    </div>
+                    <div class="panel-body">
+                        <p><b>Who:</b> {{rec.FirstName}} {{rec.LastName}}</p>
+                        <p><b>Where:</b> << need record location >></p>
+                        <p><b>When:</b> {{rec.Events[0].Date}}</p>
+                        <p><b>Source:</b> <a target="_blank" ng-href="{{rec.Source.Link}}" title="{{rec.Source.Name}}">Go to record</a></p>
+                        <p>
+                            <a target="_blank" ng-href="{{rec.Source.Link}}" title="{{rec.Source.Name}}">
+                                <img ng-src="Content/img/{{rec.Source.Name}}50.jpg" />
+                            </a>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
