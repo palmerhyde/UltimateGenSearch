@@ -33,7 +33,7 @@
                         </div>
                         <div class="panel-body">
                             <p><b>Who:</b> {{rec.FirstName}} {{rec.LastName}}</p>
-                            <p><b>Where:</b> << need record location >></p>
+                            <p><b>Where:</b> {{rec.Events[0].Place}}</p>
                             <p><b>When:</b> {{rec.Events[0].Date}}</p>
                             <p><b>Source:</b> <a target="_blank" ng-href="{{rec.Source.Link}}" title="{{rec.Source.Name}}">Go to record</a></p>
                             <p>
