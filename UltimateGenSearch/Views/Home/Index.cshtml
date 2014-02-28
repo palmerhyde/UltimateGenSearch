@@ -10,13 +10,17 @@
             </div>
             <form class="navbar-form" ng-submit="search(model)">
                 <input type="text" class="form-inline input-sm" placeholder="who" ng-model="model.who">
+                <img src="Content/img/name.png" class="img-name" ng-hide="showSearchPage || showAccountPage || searchLoading" />
                 <input type="text" class="form-inline input-sm" placeholder="where" ng-model="model.where">
+                <img src="Content/img/place.png" class="img-place" ng-hide="showSearchPage || showAccountPage || searchLoading" />
                 <input type="text" class="form-inline input-sm" placeholder="when" ng-model="model.when">
+                <img src="Content/img/date.png" class="img-date" ng-hide="showSearchPage || showAccountPage || searchLoading" />
                 <button type="submit" class="btn btn-primary"><span class="glyphicon glyphicon-search"></span></button>
             </form>
             <a ng-click="showAccountPageFn()" title="My Account">
                 <span class="glyphicon glyphicon-user head-icon"></span>
             </a>
+            <img src="Content/img/manage.png" class="img-manage" ng-hide="showSearchPage || showAccountPage || searchLoading" />
         </div>
     </div>
 

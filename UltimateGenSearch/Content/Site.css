@@ -276,3 +276,28 @@ textarea {
   padding-top: 95px;
   text-align: center;
 }
+
+.img-name,
+.img-place,
+.img-manage,
+.img-date
+ {
+    top: 40px;
+    position: absolute;
+}
+
+.img-name {
+    left: 41px;
+}
+
+.img-place {
+    left: 263px;
+}
+
+.img-date {
+    left: 485px;
+}
+
+.img-manage {
+    right: 0px;
+}
