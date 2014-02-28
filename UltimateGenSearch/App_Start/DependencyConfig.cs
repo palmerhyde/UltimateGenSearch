@@ -32,11 +32,12 @@ namespace UltimateGenSearch.App_Start
             Container.RegisterType<IAggregator, SimpleAggregator>();
 
             Container.RegisterType<ISearchService, SearchService>();
+            Container.RegisterType<IAccountService, AccountService>();
 
             Container.RegisterType<IConnectionFactory, ConnectionFactory>();
             Container.RegisterType<ILogin, NullLogin>();
             Container.RegisterType<ILogin, AcomLogin>("AcomLogin");
-            Container.RegisterType<IUser, DummyUser>();
+            Container.RegisterType<IUser, User>();
 
 
 

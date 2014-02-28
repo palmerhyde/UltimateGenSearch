@@ -33,7 +33,14 @@ namespace UltimateGenSearch.Services.Login
 
         public void Login(CookieContainer cookies)
         {
-            var account = this.User.GetAccounts().FirstOrDefault(a=>a.Name == VendorNames.ACOM);
+            var accountName = Enum.GetName(typeof(VendorNames), VendorNames.Ancestry);
+
+            if (accountName == null)
+            {
+                return;
+            }
+
+            var account = this.User.GetAccounts().FirstOrDefault(a => a.Name == accountName);
 
             if (account == null)
             {
