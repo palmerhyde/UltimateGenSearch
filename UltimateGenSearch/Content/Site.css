@@ -64,24 +64,20 @@ textarea {
     padding: 0;
     margin: 5px;
 }
-.panel.Ancestry .panel-heading, .nav.nav-sidebar li.anc:hover a {
+.panel.Ancestry .panel-heading {
     background-color: #d6e9c6;
     background-image: none;
 }
 
-.panel.FindMyPast .panel-heading, .nav.nav-sidebar li.fmp:hover a {
+.panel.FindMyPast .panel-heading {
     background-color: #428bca;
     background-image: none;
     color: #fff;
 }
 
-.panel.MyHeritage .panel-heading, .nav.nav-sidebar li.mh:hover a {
+.panel.MyHeritage .panel-heading {
     background-color: #faebcc;
     background-image: none;
-}
-
-.nav.nav-sidebar li:hover {
-    cursor: pointer;
 }
 
 .center-block {
@@ -138,4 +134,18 @@ textarea {
   to {
     transform: rotate(360deg);
   }
+}
+
+.nav.nav-sidebar li h3 {
+    text-align: center;
+}
+
+.nav.nav-sidebar li {
+    padding-left: 10px;
+}
+
+.panel-heading img {
+    float: left;
+    max-width: 20px;
+    margin-right: 10px;
 }
