@@ -37,7 +37,16 @@ namespace UltimateGenSearch.Services
             var tasks = new List<Task<IList<Record>>>();
             Parallel.ForEach(
                 _scrapers,
-                scraper => results.Add(scraper.Search(query, PAGES)));
+                scraper =>
+                {
+                    try
+                    {
+                        results.Add(scraper.Search(query, PAGES));
+                    }
+                    catch (Exception)
+                    {
+                    }
+                });
             
 
             return _aggregator.Aggregate(results);

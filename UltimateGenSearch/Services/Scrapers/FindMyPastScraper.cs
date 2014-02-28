@@ -95,7 +95,7 @@ namespace UltimateGenSearch.Services.Scrapers
 
                             if (!string.IsNullOrEmpty(born))
                             {
-                                record.Events.Add(new Event() { Name = "Birth", Date = born });
+                                record.Events.Add(new Event() { Name = "Birth", Date = born, Place =  GetTextValue(cells[6].InnerText) });
                             }
 
                             if (!string.IsNullOrEmpty(died))
