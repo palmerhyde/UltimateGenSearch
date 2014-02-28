@@ -183,7 +183,13 @@ textarea {
 
 .panel-body.Ancestry,
 .panel-body.FamilySearch,
-.panel-body.FindMyPast
+.panel-body.FindMyPast,
+.panel-body.MyHeritage,
+.panel-body.Geni,
+.panel-body.NationalArchives,
+.panel-body.EllisIsland,
+.panel-body.IrishGenealogy,
+.panel-body.NationalLibrary
  {
     position: relative;
     display: block;
@@ -202,6 +208,38 @@ textarea {
 .panel-body.FindMyPast::after {
     content: "";
     background: url(img/FindMyPast50.jpg) no-repeat;
+}
+
+.panel-body.MyHeritage::after {
+    content: "";
+    background: url(img/MyHeritage50.jpg) no-repeat;
+}
+
+.panel-body.NationalArchives::after {
+    content: "";
+    background: url(img/NationalArchives50.jpg) no-repeat;
+}
+
+.panel-body.Geni::after {
+    content: "";
+    background: url(img/Geni50.jpg) no-repeat;
+}
+
+.panel-body.EllisIsland::after {
+    content: "";
+    background: url(img/EllisIsland50.jpg) no-repeat;
+    margin-left: 50px;
+}
+
+.panel-body.IrishGenealogy::after {
+    content: "";
+    background: url(img/irishGenealogy50.jpg) no-repeat;
+}
+
+.panel-body.NationalLibrary::after {
+    content: "";
+    background: url(img/NationalLibrary50.jpg) no-repeat;
+    margin-left: 50px;
 }
 
 .glyphicon.head-icon {
