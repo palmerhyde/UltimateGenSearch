@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Threading.Tasks;
 using System.Web;
 using UltimateGenSearch.Models;
 using UltimateGenSearch.Services.Aggregator;
@@ -32,11 +33,12 @@ namespace UltimateGenSearch.Services
         public IList<Record> Search(Query query)
         {
             IList<IList<Record>> results = new List<IList<Record>>();
-
-            foreach (var scraper in _scrapers)
-            {
-                results.Add(scraper.Search(query, PAGES));
-            }
+            
+            var tasks = new List<Task<IList<Record>>>();
+            Parallel.ForEach(
+                _scrapers,
+                scraper => results.Add(scraper.Search(query, PAGES)));
+            
 
             return _aggregator.Aggregate(results);
         }

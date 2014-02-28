@@ -1,5 +1,8 @@
 ﻿namespace UltimateGenSearch.Services.Connections
 {
+    using System;
+    using System.Collections;
+    using System.Collections.Generic;
     using System.Net;
     using System.Net.Http;
 
@@ -7,15 +10,46 @@
 
     public class ConnectionFactory : IConnectionFactory
     {
-        public HttpClient CreateClient(ILogin login)
+        private static IDictionary<string, CookieContainer> cachedCookies = new Dictionary<string, CookieContainer>();
+        private static object lockObject = new object();
+
+        public HttpClient CreateClient(ILogin login, Dictionary<Uri, IList<Cookie>> cookies)
         {
-            var cookieContainer = new CookieContainer();
+            var handler = new HttpClientHandler();
+
             if (login != null)
             {
-                login.Login(cookieContainer);
+                CookieContainer cookieContainer;
+                string loginName = login.GetType().FullName;
+                lock (lockObject)
+                {
+                    cachedCookies.TryGetValue(loginName, out cookieContainer);
+                }
+
+                if (cookieContainer == null)
+                {
+                    cookieContainer = new CookieContainer();
+                    login.Login(cookieContainer);
+                    lock (lockObject)
+                    {
+                        cachedCookies[loginName] = cookieContainer;
+                    }
+
+                }
+                handler.CookieContainer = cookieContainer;
             }
 
-            var handler = new HttpClientHandler() { CookieContainer = cookieContainer };
+            if (cookies != null)
+            {
+                foreach (var k in cookies)
+                {
+                    foreach (var cookie in k.Value)
+                    {
+                        handler.CookieContainer.Add(k.Key, cookie);
+                    }
+                }
+
+            }
 
             return new HttpClient(handler);
         }

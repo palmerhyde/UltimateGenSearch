@@ -1,22 +1,26 @@
 ﻿ugsApp.controller('SearchController', ['$scope', '$http', function ($scope, $http) {
+    $scope.searchLoading = false;
+    $scope.searchFailed = false;
+    $scope.searchSuccess = false;
+
     $scope.model = {
         who: "",
         where: "",
         when: ""
-    }
-    $scope.records = [];
-    $scope.filterBy = "";
-    $scope.searchLoading = false;
-    $scope.searchFailed = false;
-    $scope.searchSuccess = false;
-    
-
-    $scope.setFilter = function (_filterBy) {
-        $scope.filterBy = _filterBy;
     };
+    $scope.filterBy = {
+        Ancestry: true,
+        FamilySearch: true,
+        FindMyPast: true
+    };
+
+    $scope.recordsMaster = [];
+    $scope.records = [];
+    
 
     $scope.search = function (_model) {
         $scope.records = [];
+        $scope.recordsMaster = [];
         $scope.searchFailed = false;
         $scope.searchSuccess = false;
         $scope.searchLoading = true;
@@ -27,7 +31,12 @@
             })
 		    .success(function (data, status, headers, config) {
 		        for (var i = 0; i < data.length; i++) {
-		            $scope.records.push(data[i]);
+		            $scope.recordsMaster.push(data[i]);
+
+		            if($scope.filterBy[data[i].Vendor] == true) {
+                        $scope.records.push(data[i]);
+		            }
+		            
 		        }
 		        $scope.searchLoading = false;
 		        $scope.searchSuccess = true;
@@ -41,8 +50,17 @@
     };
 
     $scope.populateForm = function () {
-        $scope.model.who = "John Smith";
-        $scope.model.where = "New York";
-        $scope.model.when = "1920";
+        $scope.model.who = "John Kennedy";
+        $scope.model.where = "Boston";
+        $scope.model.when = "1917";
     };
+
+    $scope.$watch('filterBy', function () {
+        $scope.records = [];
+        for (var i = 0; i < $scope.recordsMaster.length; i++) {
+            if ($scope.filterBy[$scope.recordsMaster[i].Vendor] == true) {
+                $scope.records.push($scope.recordsMaster[i]);
+            }
+        }
+    }, true);
 }]);

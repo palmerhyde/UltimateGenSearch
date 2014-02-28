@@ -2,10 +2,11 @@
     <div class="navbar navbar-inverse" role="navigation">
         <div class="container-fluid">
             <div class="navbar-header">
-                <a class="navbar-brand" href="#">
-                    <span class="glyphicon glyphicon-user" ></span>
+                <a class="navbar-brand" href="#" ng-click="populateForm()">
+                    <span class="glyphicon glyphicon-user"></span>
                     <span class="glyphicon glyphicon-map-marker"></span>
-                    <span class="glyphicon glyphicon-calendar"></span></a>
+                    <span class="glyphicon glyphicon-calendar"></span>
+                </a>
             </div>
             <form class="navbar-form" ng-submit="search(model)">
                 <input type="text" class="form-inline input-sm" placeholder="who" ng-model="model.who">
@@ -13,7 +14,6 @@
                 <input type="text" class="form-inline input-sm" placeholder="when" ng-model="model.when">
                 <button type="submit" class="btn btn-primary"><span class="glyphicon glyphicon-search"></span></button>
             </form>
-            <a class="navbar-header" ng-click="populateForm()">Populate Form</a>
         </div>
     </div>
 
@@ -32,29 +32,26 @@
 
                 <div class="col-sm-2 sidebar">
                     <ul class="nav nav-sidebar">
-                        <li class="anc"><a ng-click="setFilter('Ancestry')">Ancestry</a></li>
-                        <li class="mh"><a ng-click="setFilter('MyHeritage')">MyHeritage</a></li>
-                        <li class="fmp"><a ng-click="setFilter('FindMyPast')">FindMyPast</a></li>
+                        <li><h3>Filter Results</h3></li>
+                        <li class="anc"><label style="display: block; width: 100%; height: 20px">Ancestry<input type="checkbox" class="pull-right" name="filter" value="Ancestry" ng-model="filterBy.Ancestry" /></label></li>
+                        <li class="mh"><label style="display: block; width: 100%; height: 20px">Family Search<input type="checkbox" class="pull-right" name="filter" value="MyHeritage" ng-model="filterBy.FamilySearch"  /></label></li>
+                        <li class="fmp"><label style="display: block; width: 100%; height: 20px">Find My Past<input type="checkbox" class="pull-right" name="filter" value="FindMyPast" ng-model="filterBy.FindMyPast" /></label></li>
                     </ul>
                 </div>
 
 
                 <div class="col-sm-10 panel">
                     <div class="row">
-                        <div class="panel panel-default col-sm-2 no-pad {{rec.Vendor}}" ng-repeat="rec in records track by $index | filter: { rec.Source.Name: filterBy }">
+                        <div class="panel panel-default col-sm-2 no-pad {{rec.Vendor}}" ng-repeat="rec in records track by $index">
                             <div class="panel-heading">
+                                <img class="icon" ng-src="Content/img/{{rec.Vendor}}Icon.gif" />
                                 <h3 class="panel-title">{{rec.Source.Name}}</h3>
                             </div>
-                            <div class="panel-body">
+                            <div class="panel-body {{rec.Vendor}}">
                                 <p><b>Who:</b> {{rec.FirstName}} {{rec.LastName}}</p>
                                 <p><b>Where:</b> {{rec.Events[0].Place}}</p>
                                 <p><b>When:</b> {{rec.Events[0].Date}}</p>
                                 <p><b>Source:</b> <a target="_blank" ng-href="{{rec.Source.Link}}" title="{{rec.Source.Name}}">Go to record</a></p>
-                                <p>
-                                    <a target="_blank" ng-href="{{rec.Source.Link}}" title="{{rec.Vendor}}">
-                                        <img ng-src="Content/img/{{rec.Vendor}}50.jpg" />
-                                    </a>
-                                </p>
                             </div>
                         </div>
                     </div>

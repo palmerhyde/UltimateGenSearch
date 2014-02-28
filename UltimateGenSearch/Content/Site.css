@@ -64,24 +64,23 @@ textarea {
     padding: 0;
     margin: 5px;
 }
-.panel.Ancestry .panel-heading, .nav.nav-sidebar li.anc:hover a {
+.panel.Ancestry .panel-heading {
     background-color: #d6e9c6;
     background-image: none;
+    min-height: 72px;
 }
 
-.panel.FindMyPast .panel-heading, .nav.nav-sidebar li.fmp:hover a {
+.panel.FamilySearch .panel-heading {
     background-color: #428bca;
     background-image: none;
     color: #fff;
+    min-height: 72px;
 }
 
-.panel.MyHeritage .panel-heading, .nav.nav-sidebar li.mh:hover a {
+.panel.FindMyPast .panel-heading {
     background-color: #faebcc;
     background-image: none;
-}
-
-.nav.nav-sidebar li:hover {
-    cursor: pointer;
+    min-height: 72px;
 }
 
 .center-block {
@@ -138,4 +137,69 @@ textarea {
   to {
     transform: rotate(360deg);
   }
+}
+
+.nav.nav-sidebar li h3 {
+    text-align: center;
+}
+
+.nav.nav-sidebar li {
+    padding-left: 10px;
+}
+
+.panel-heading img {
+    float: left;
+    max-width: 20px;
+    margin-right: 10px;
+}
+
+.glyphicon.lrg {
+    font-size: 5rem;
+    color: #999;
+}
+
+.panel-title {
+    display: flex;
+}
+
+.panel-body {
+    min-height: 170px;
+}
+
+.row .panel-body::after,
+.row .panel-body::before {
+        display: block;
+    }
+
+.panel-body::after {
+    opacity: 0.6;
+    top: 137px;
+    left: 155px;
+    bottom: 0;
+    right: 10px;
+    position: absolute;
+    z-index: 1;
+}
+
+.panel-body.Ancestry,
+.panel-body.FamilySearch,
+.panel-body.FindMyPast
+ {
+    position: relative;
+    display: block;
+}
+
+.panel-body.Ancestry::after {
+    content: "";
+    background: url(img/Ancestry50.jpg) no-repeat;
+}
+
+.panel-body.FamilySearch::after {
+    content: "";
+    background: url(img/FamilySearch50.jpg) no-repeat;
+}
+
+.panel-body.FindMyPast::after {
+    content: "";
+    background: url(img/FindMyPast50.jpg) no-repeat;
 }
