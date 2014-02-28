@@ -52,26 +52,26 @@ namespace UltimateGenSearch.Services.Scrapers
 
             var cookieList = new List<Cookie>()
                                                  {
-                                                    new Cookie("M", "s=1393537714260&r=https%3A%2F%2Ffamilysearch.org%2Fsearch%2Frecord%2Fresults%3Fcount%3D20%26query%3D%252Bgivenname%253Ajohn~%2520%252Bsurname%253Akennedy~%2520%252Bany_place%253Aboston~%2520%252Bany_year%253A1917-1917~"),
-                                                    new Cookie("__utma", "17181222.323854518.1393528790.1393528790.1393537698.2"),
-                                                    new Cookie("__utmb", "17181222.2.10.1393537698"),
-                                                    new Cookie("__utmc", "17181222"),
-                                                    new Cookie("__utmz", "17181222.1393528790.1.1.utmcsr=familysearch.org|utmccn=(referral)|utmcmd=referral|utmcct=/"),
-                                                    new Cookie("aam_uuid", "2.8008E+37"),
-                                                    new Cookie("fs-highconf", "false%24%24USYS26C020F9FC"),
-                                                    new Cookie("fs_ex_home", "%7B%22stamp%22%3A%22b429891e2da67342d26c9b6d8b6043d4%22%2C%22bucket%22%3A61%2C%22features%22%3A%7B%22fanChartSlideEx%22%3A1%2C%22loggedInHomeEx%22%3A0%2C%22myFamilyBookletEx%22%3A1%2C%22mBoxHomeBannersEx%22%3A1%2C%22threeMBoxEx%22%3A1%2C%22clickTaleHomeOnlyEx%22%3A0%2C%22boomrRum%22%3Atrue%7D%2C%22dirtyFeatures%22%3A%5B%5D%7D"),
-                                                    new Cookie("fs_ex_search", "%7B%22stamp%22%3A%2297b497d00b06e8aa83e94e4ce4464766%22%2C%22bucket%22%3A61%2C%22features%22%3A%7B%22allCollectionsTest%22%3A0%2C%22oneCallThatsAll%22%3A0%2C%22detailsExpansion%22%3A0%2C%22hrDetailsComponent%22%3A1%2C%22pushState%22%3A1%2C%22responsiveMobile%22%3A1%2C%22catalogOclcLink%22%3A1%2C%22catalogSubjectColumn%22%3A1%2C%22SourceWalker%22%3A0%2C%22SourceWalkerExt%22%3A0%2C%22SourceWalkerOrg%22%3A0%2C%22SourceWalkerDetach%22%3A0%2C%22exImageLocales%22%3A0%2C%22newFeatureAlert%22%3A0%2C%22alternateCDSprod%22%3A0%2C%22alternateCDSstage%22%3A0%2C%22alternateCDSstageData%22%3A0%2C%22addSourceBoxTitle%22%3A1%7D%2C%22dirtyFeatures%22%3A%5B%5D%7D"),
-                                                    new Cookie("fs_experiments", "%7B%22bucket%22%3A61%2C%22apps%22%3A%7B%22shared-ui%22%3A%7B%22stamp%22%3A%22c5a4b23e53c17c2103a07b274b6e33a9%22%2C%22bucket%22%3A61%2C%22features%22%3A%7B%22wwwRedirect%22%3A0%2C%22templeLink%22%3A1%2C%22showVolunteerExperiment%22%3A0%2C%22accelleratorDropDownExperiment%22%3A0%2C%22helpMenuExperiment%22%3A1%2C%22myCasesExperiment%22%3A1%2C%22chromeFrameExperiment%22%3A0%2C%22mobileDrawerExperiment%22%3A0%2C%22accelleratorDropDownTnTExperiment%22%3A1%2C%22feedbackExperiment%22%3A1%2C%22feedbackInHeaderExperiment%22%3A0%2C%22salesForceExperiment%22%3A1%2C%22bootstrap232%22%3A0%2C%22bootstrap3%22%3A0%2C%22jQuery191%22%3A0%2C%22jQueryMigrate%22%3A0%2C%22jQueryMigrateDebug%22%3A0%2C%22appDynamicsEx%22%3A1%2C%22parterProductsEx%22%3A0%2C%22newHeaderFooterEx%22%3A1%2C%22adminRoleEx%22%3A0%2C%22dropdownNavEx%22%3A1%2C%22mBoxAlwaysOnEx%22%3A1%2C%22registerLinkEx%22%3A0%2C%22injectFiveTwo%22%3A0%2C%22newRelCalEndpointEx%22%3A1%2C%22frMemoriesEx%22%3A1%2C%22netPromoterEx%22%3A1%2C%22boomrRum%22%3Afalse%7D%2C%22dirtyFeatures%22%3A%5B%5D%7D%7D%7D"),
-                                                    new Cookie("fs_search_history", "https%3A//familysearch.org/search/record/results%3Fcount%3D20%26query%3D%252Bgivenname%253Ajohn%7E%2520%252Bsurname%253Akennedy%7E%2520%252Bany_place%253Aboston%7E%2520%252Bany_year%253A1917-1917%7E"),
-                                                    new Cookie("mbox", "PC#1393528788905-476309.21_16#1394747316|check#true#1393537776|session#1393537697014-350721#1393539576"),
-                                                    new Cookie("optimizelyBuckets", "%7B%22589211729%22%3A%22609190609%22%2C%22592710112%22%3A%22597080020%22%2C%22593911883%22%3A%22589946296%22%7D"),
-                                                    new Cookie("optimizelyEndUserId", "oeu1393528795727r0.17253762506879866"),
-                                                    new Cookie("optimizelySegments", "%7B%22536411379%22%3A%22none%22%2C%22536691475%22%3A%22direct%22%2C%22544410221%22%3A%22gc%22%2C%22549330157%22%3A%22false%22%7D"),
-                                                    new Cookie("s_cc", "TRUE"),
-                                                    new Cookie("s_fid", "048F4749832F6518-0E26E2010A7359F7"),
-                                                    new Cookie("s_ppv", "FamilySearch%253A%2520Search%253A%2520Records%2520%253A%2520Results%2C38%2C38%2C605"),
-                                                    new Cookie("s_sq", "%5B%5BB%5D%5D"),
-                                                    new Cookie("s_vi", "[CS]v1|2987C7EB85012E98-600001322001F1E7[CE]")
+                                                   new Cookie("ADRUM", "s=1393547433031&r=https%3A%2F%2Ffamilysearch.org%2Fsearch%2Frecord%2Fresults%3Fcount%3D20%26query%3D%252Bgivenname%253Ajohn~%2520%252Bsurname%253Akennedy~%2520%252Bany_place%253Aboston~%2520%252Bany_year%253A1917-1917~"),
+                                                new Cookie("__utma", "17181222.323854518.1393528790.1393537698.1393544642.3"),
+                                                new Cookie("__utmc", "17181222"),
+                                                new Cookie("__utmz", "17181222.1393544642.3.2.utmcsr=localhost:50985|utmccn=(referral)|utmcmd=referral|utmcct=/"),
+                                                new Cookie("aam_uuid", "28007998870696928524186830345581174031"),
+                                                new Cookie("fs-highconf", "false%24%24USYSA2FAEFE675"),
+                                                new Cookie("fs_ex_home", "%7B%22stamp%22%3A%22b429891e2da67342d26c9b6d8b6043d4%22%2C%22bucket%22%3A61%2C%22features%22%3A%7B%22fanChartSlideEx%22%3A1%2C%22loggedInHomeEx%22%3A0%2C%22myFamilyBookletEx%22%3A1%2C%22mBoxHomeBannersEx%22%3A1%2C%22threeMBoxEx%22%3A1%2C%22clickTaleHomeOnlyEx%22%3A0%2C%22boomrRum%22%3Atrue%7D%2C%22dirtyFeatures%22%3A%5B%5D%7D"),
+                                                new Cookie("fs_ex_search", "%7B%22stamp%22%3A%2297b497d00b06e8aa83e94e4ce4464766%22%2C%22bucket%22%3A61%2C%22features%22%3A%7B%22allCollectionsTest%22%3A0%2C%22oneCallThatsAll%22%3A0%2C%22detailsExpansion%22%3A0%2C%22hrDetailsComponent%22%3A1%2C%22pushState%22%3A1%2C%22responsiveMobile%22%3A1%2C%22catalogOclcLink%22%3A1%2C%22catalogSubjectColumn%22%3A1%2C%22SourceWalker%22%3A0%2C%22SourceWalkerExt%22%3A0%2C%22SourceWalkerOrg%22%3A0%2C%22SourceWalkerDetach%22%3A0%2C%22exImageLocales%22%3A0%2C%22newFeatureAlert%22%3A0%2C%22alternateCDSprod%22%3A0%2C%22alternateCDSstage%22%3A0%2C%22alternateCDSstageData%22%3A0%2C%22addSourceBoxTitle%22%3A1%7D%2C%22dirtyFeatures%22%3A%5B%5D%7D"),
+                                                new Cookie("fs_experiments", "%7B%22bucket%22%3A61%2C%22apps%22%3A%7B%22shared-ui%22%3A%7B%22stamp%22%3A%22c5a4b23e53c17c2103a07b274b6e33a9%22%2C%22bucket%22%3A61%2C%22features%22%3A%7B%22wwwRedirect%22%3A0%2C%22templeLink%22%3A1%2C%22showVolunteerExperiment%22%3A0%2C%22accelleratorDropDownExperiment%22%3A0%2C%22helpMenuExperiment%22%3A1%2C%22myCasesExperiment%22%3A1%2C%22chromeFrameExperiment%22%3A0%2C%22mobileDrawerExperiment%22%3A0%2C%22accelleratorDropDownTnTExperiment%22%3A1%2C%22feedbackExperiment%22%3A1%2C%22feedbackInHeaderExperiment%22%3A0%2C%22salesForceExperiment%22%3A1%2C%22bootstrap232%22%3A0%2C%22bootstrap3%22%3A0%2C%22jQuery191%22%3A0%2C%22jQueryMigrate%22%3A0%2C%22jQueryMigrateDebug%22%3A0%2C%22appDynamicsEx%22%3A1%2C%22parterProductsEx%22%3A0%2C%22newHeaderFooterEx%22%3A1%2C%22adminRoleEx%22%3A0%2C%22dropdownNavEx%22%3A1%2C%22mBoxAlwaysOnEx%22%3A1%2C%22registerLinkEx%22%3A0%2C%22injectFiveTwo%22%3A0%2C%22newRelCalEndpointEx%22%3A1%2C%22frMemoriesEx%22%3A1%2C%22netPromoterEx%22%3A1%2C%22boomrRum%22%3Afalse%7D%2C%22dirtyFeatures%22%3A%5B%5D%7D%7D%7D"),
+                                                new Cookie("fs_search_history", "https%3A//familysearch.org/search/record/results%3Fcount%3D20%26query%3D%252Bgivenname%253Ajohn%7E%2520%252Bsurname%253Akennedy%7E%2520%252Bany_place%253Aboston%7E%2520%252Bany_year%253A1917-1917%7E"),
+                                                new Cookie("fssessionid", "USYSA2FAEFE6758DDE7BB3223A7CA26F1606_idses-prod02.a.fsglobal.net"),
+                                                new Cookie("mbox", "PC#1393528788905-476309.21_16#1394757035|check#true#1393547495|session#1393547434090-842093#1393549295"),
+                                                new Cookie("optimizelyBuckets", "%7B%22589211729%22%3A%22609190609%22%2C%22592710112%22%3A%22597080020%22%2C%22593911883%22%3A%22589946296%22%7D"),
+                                                new Cookie("optimizelyEndUserId", "oeu1393528795727r0.17253762506879866"),
+                                                new Cookie("optimizelySegments", "%7B%22536411379%22%3A%22none%22%2C%22536691475%22%3A%22direct%22%2C%22544410221%22%3A%22gc%22%2C%22549330157%22%3A%22false%22%7D"),
+                                                new Cookie("s_cc", "TRUE"),
+                                                new Cookie("s_fid", "048F4749832F6518-0E26E2010A7359F7"),
+                                                new Cookie("s_ppv", "FamilySearch%253A%2520Search%253A%2520Records%2520%253A%2520Results"),
+                                                new Cookie("s_sq", "%5B%5BB%5D%5D"),
+                                                new Cookie("s_vi", "[CS]v1|2987C7EB85012E98-600001322001F1E7[CE]")
                                                  };
 
             var cookies = new Dictionary<Uri, IList<Cookie>>()
@@ -87,11 +87,11 @@ namespace UltimateGenSearch.Services.Scrapers
                 client.DefaultRequestHeaders.Referrer = new Uri(referrer);
                 client.DefaultRequestHeaders.Add("ADRUM", "isAjax:true");
 
-                
+
                 var response = client.GetAsync(queryString).Result;
                 if (response.IsSuccessStatusCode)
                 {
-                    
+
                     var doc = new XmlDocument();
                     doc.LoadXml(response.Content.ReadAsStringAsync().Result);
 
@@ -121,7 +121,7 @@ namespace UltimateGenSearch.Services.Scrapers
                         {
                             var e = new Event();
 
-                            if (evt.Attributes["date"] != null) 
+                            if (evt.Attributes["date"] != null)
                                 e.Date = this.GetTextValue(evt.Attributes["date"].Value);
 
                             if (evt.Attributes["place"] != null)
