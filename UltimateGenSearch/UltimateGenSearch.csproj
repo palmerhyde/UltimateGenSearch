@@ -209,6 +209,8 @@
     <Content Include="Content\img\a-pint-of-guinness-please.gif" />
     <Content Include="Content\img\ancestry50.jpg" />
     <Content Include="Content\img\AncestryIcon.gif" />
+    <Content Include="Content\img\ArchivesLogo.png" />
+    <Content Include="Content\img\ArchivesIcon.gif" />
     <Content Include="Content\img\EllisIsland50.jpg" />
     <Content Include="Content\img\EllisIslandIcon.gif" />
     <Content Include="Content\img\bod.gif" />
@@ -216,8 +218,12 @@
     <Content Include="Content\img\date.png" />
     <Content Include="Content\img\FamilySearch50.jpg" />
     <Content Include="Content\img\FamilySearchIcon.gif" />
+    <Content Include="Content\img\FindAGrave50.jpg" />
+    <Content Include="Content\img\FindAGraveIcon.gif" />
     <Content Include="Content\img\FindMyPast50.jpg" />
     <Content Include="Content\img\FindMyPastIcon.gif" />
+    <Content Include="Content\img\fold3Logo.png" />
+    <Content Include="Content\img\fold3Icon.gif" />
     <Content Include="Content\img\Geni50.jpg" />
     <Content Include="Content\img\GeniIcon.gif" />
     <Content Include="Content\img\irishGenealogy50.JPG" />
@@ -234,6 +240,8 @@
     <Content Include="Content\img\MyHeritage50.jpg" />
     <Content Include="Content\img\MyHeritageIcon.gif" />
     <Content Include="Content\img\name.png" />
+    <Content Include="Content\img\NewsPapersLogo.png" />
+    <Content Include="Content\img\NewsPapersIcon.gif" />
     <Content Include="Content\img\place.png" />
     <Content Include="Content\themes\base\images\animated-overlay.gif" />
     <Content Include="Content\img\ted.gif" />
