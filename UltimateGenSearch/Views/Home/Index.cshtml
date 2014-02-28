@@ -14,6 +14,9 @@
                 <input type="text" class="form-inline input-sm" placeholder="when" ng-model="model.when">
                 <button type="submit" class="btn btn-primary"><span class="glyphicon glyphicon-search"></span></button>
             </form>
+            <a ng-click="showAccountPageFn()" title="My Account">
+                <span class="glyphicon glyphicon-user head-icon"></span>
+            </a>
         </div>
     </div>
 
@@ -27,35 +30,65 @@
         <h3>Record not found. Should I fake it? (Y/N)</h3>
     </div>
 
-        <div class="container-fluid" ng-show="searchSuccess">
-            <div class="row">
+    <div class="container-fluid" ng-show="showSearchPage">
+        <div class="row">
 
-                <div class="col-sm-2 sidebar">
-                    <ul class="nav nav-sidebar">
-                        <li><h3>Filter Results</h3></li>
-                        <li class="anc"><label style="display: block; width: 100%; height: 20px">Ancestry<input type="checkbox" class="pull-right" name="filter" value="Ancestry" ng-model="filterBy.Ancestry" /></label></li>
-                        <li class="mh"><label style="display: block; width: 100%; height: 20px">Family Search<input type="checkbox" class="pull-right" name="filter" value="MyHeritage" ng-model="filterBy.FamilySearch"  /></label></li>
-                        <li class="fmp"><label style="display: block; width: 100%; height: 20px">Find My Past<input type="checkbox" class="pull-right" name="filter" value="FindMyPast" ng-model="filterBy.FindMyPast" /></label></li>
-                    </ul>
-                </div>
+            <div class="col-sm-2 sidebar">
+                <ul class="nav nav-sidebar">
+                    <li><h3>Filter Results</h3></li>
+                    <li class="anc"><label style="display: block; width: 100%; height: 20px">Ancestry<input type="checkbox" class="pull-right" name="filter" value="Ancestry" ng-model="filterBy.Ancestry" /></label></li>
+                    <li class="mh"><label style="display: block; width: 100%; height: 20px">Family Search<input type="checkbox" class="pull-right" name="filter" value="MyHeritage" ng-model="filterBy.FamilySearch" /></label></li>
+                    <li class="fmp"><label style="display: block; width: 100%; height: 20px">Find My Past<input type="checkbox" class="pull-right" name="filter" value="FindMyPast" ng-model="filterBy.FindMyPast" /></label></li>
+                </ul>
+            </div>
 
 
-                <div class="col-sm-10 panel">
-                    <div class="row">
-                        <div class="panel panel-default col-sm-2 no-pad {{rec.Vendor}}" ng-repeat="rec in records track by $index">
-                            <div class="panel-heading">
-                                <img class="icon" ng-src="Content/img/{{rec.Vendor}}Icon.gif" />
-                                <h3 class="panel-title">{{rec.Source.Name}}</h3>
-                            </div>
-                            <div class="panel-body {{rec.Vendor}}">
-                                <p><b>Who:</b> {{rec.FirstName}} {{rec.LastName}}</p>
-                                <p><b>Where:</b> {{rec.Events[0].Place}}</p>
-                                <p><b>When:</b> {{rec.Events[0].Date}}</p>
-                                <p><b>Source:</b> <a target="_blank" ng-href="{{rec.Source.Link}}" title="{{rec.Source.Name}}">Go to record</a></p>
-                            </div>
+            <div class="col-sm-10 panel">
+                <div class="row">
+                    <div class="panel panel-default col-sm-2 no-pad {{rec.Vendor}}" ng-repeat="rec in records track by $index">
+                        <div class="panel-heading">
+                            <img class="icon" ng-src="Content/img/{{rec.Vendor}}Icon.gif" />
+                            <h3 class="panel-title">{{rec.Source.Name}}</h3>
+                        </div>
+                        <div class="panel-body {{rec.Vendor}}">
+                            <p><b>Who:</b> {{rec.FirstName}} {{rec.LastName}}</p>
+                            <p><b>Where:</b> {{rec.Events[0].Place}}</p>
+                            <p><b>When:</b> {{rec.Events[0].Date}}</p>
+                            <p><b>Source:</b> <a target="_blank" ng-href="{{rec.Source.Link}}" title="{{rec.Source.Name}}">Go to record</a></p>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
     </div>
+
+    <div class="container-fluid" ng-show="showAccountPage">
+        <div class="row panel-accounts">
+            <div class="col-sm-10 panel ">
+                <h3>My Accounts</h3>
+                <div class="row">
+                    <div class="panel panel-default col-sm-2 no-pad {{acc.Name}}" ng-repeat="acc in myAccounts track by $index">
+                        <div class="panel-heading">
+                            <img class="icon" ng-src="Content/img/{{acc.Name}}Icon.gif" />
+                            <h3 class="panel-title">{{acc.Name}}</h3>
+                        </div>
+
+                        <div class="panel-body {{acc.Name}}" ng-show="acc.Username && acc.Username.length > 0">
+                            <p><b>Username:</b> {{acc.Username}}</p>
+                            <p><b>Password:</b> **********</p>
+                        </div>
+                        <div class="panel-body {{acc.Name}}" ng-show="!acc.Username || acc.Username.length < 1">
+                            <p>
+                                <input type="text" placeholder="Username" ng-model="account.Username" /></p>
+                            <p><input type="password" placeholder="Password" ng-model="account.Password" /></p>
+                            <p>
+                                <input type="button" class="btn btn-primary" ng-click="connectAccount(account, acc.Name)" value="Connect Account +" />
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>
