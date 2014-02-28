@@ -163,8 +163,13 @@
     <Compile Include="Services\Connections\ConnectionFactory.cs" />
     <Compile Include="Services\Connections\IConnectionFactory.cs" />
     <Compile Include="Services\ISearchService.cs" />
+    <Compile Include="Services\Login\AcomLogin.cs" />
+    <Compile Include="Services\Login\Account.cs" />
+    <Compile Include="Services\Login\DummyUser.cs" />
     <Compile Include="Services\Login\ILogin.cs" />
+    <Compile Include="Services\Login\IUser.cs" />
     <Compile Include="Services\Login\NullLogin.cs" />
+    <Compile Include="Services\Login\VendorNames.cs" />
     <Compile Include="Services\Scrapers\AcomScraper.cs" />
     <Compile Include="Services\Scrapers\BaseScraper.cs" />
     <Compile Include="Services\Scrapers\DummyScraper.cs" />
@@ -185,8 +190,10 @@
     <Content Include="Content\bootstrap\fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Content\bootstrap\js\bootstrap.js" />
     <Content Include="Content\bootstrap\js\bootstrap.min.js" />
+    <Content Include="Content\fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Content\img\ancestry50.jpg" />
-    <Content Include="Content\img\myheritage50.jpg" />
+    <Content Include="Content\img\FindMyPast50.jpg" />
+    <Content Include="Content\img\MyHeritage50.jpg" />
     <Content Include="Content\themes\base\images\ui-bg_flat_0_aaaaaa_40x100.png" />
     <Content Include="Content\themes\base\images\ui-bg_flat_75_ffffff_40x100.png" />
     <Content Include="Content\themes\base\images\ui-bg_glass_55_fbf9ee_1x400.png" />
@@ -777,6 +784,9 @@
     <Content Include="Content\bootstrap\fonts\glyphicons-halflings-regular.eot" />
     <Content Include="Content\bootstrap\fonts\glyphicons-halflings-regular.ttf" />
     <Content Include="Content\bootstrap\fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="Content\fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="Content\fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="Content\fonts\glyphicons-halflings-regular.woff" />
     <None Include="Scripts\libs\jquery\jquery-1.9.1.intellisense.js" />
     <Content Include="Scripts\libs\jquery\jquery-1.9.1.js" />
     <Content Include="Scripts\libs\jquery\jquery-1.9.1.min.js" />
