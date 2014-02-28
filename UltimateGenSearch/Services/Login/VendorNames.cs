@@ -8,6 +8,7 @@ namespace UltimateGenSearch.Services.Login
     public enum VendorNames
     {
         Ancestry,
-        FindMyPast
+        FindMyPast,
+        FamilySearch
     }
 }
