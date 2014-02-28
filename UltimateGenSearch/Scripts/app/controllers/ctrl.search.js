@@ -10,7 +10,7 @@
     };
     $scope.filterBy = {
         Ancestry: true,
-        MyHeritage: true,
+        FamilySearch: true,
         FindMyPast: true
     };
 
@@ -20,6 +20,7 @@
 
     $scope.search = function (_model) {
         $scope.records = [];
+        $scope.recordsMaster = [];
         $scope.searchFailed = false;
         $scope.searchSuccess = false;
         $scope.searchLoading = true;
@@ -49,24 +50,16 @@
     };
 
     $scope.populateForm = function () {
-        $scope.model.who = "John Smith";
-        $scope.model.where = "New York";
-        $scope.model.when = "1920";
+        $scope.model.who = "John Kennedy";
+        $scope.model.where = "Boston";
+        $scope.model.when = "1917";
     };
 
     $scope.$watch('filterBy', function () {
-
+        $scope.records = [];
         for (var i = 0; i < $scope.recordsMaster.length; i++) {
-            if ($scope.filterBy[$scope.recordsMaster[i].Vendor] == true &&
-                $scope.records.indexOf($scope.recordsMaster[i]) == -1) {
-
+            if ($scope.filterBy[$scope.recordsMaster[i].Vendor] == true) {
                 $scope.records.push($scope.recordsMaster[i]);
-            }
-            else if ($scope.filterBy[$scope.recordsMaster[i].Vendor] == false &&
-                $scope.records.indexOf($scope.recordsMaster[i]) > -1) {
-
-                var _index = $scope.records.indexOf($scope.recordsMaster[i]);
-                $scope.records = $scope.records.slice(_index, 1);
             }
         }
     }, true);

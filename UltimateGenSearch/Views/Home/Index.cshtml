@@ -34,8 +34,8 @@
                     <ul class="nav nav-sidebar">
                         <li><h3>Filter Results</h3></li>
                         <li class="anc"><label style="display: block; width: 100%; height: 20px">Ancestry<input type="checkbox" class="pull-right" name="filter" value="Ancestry" ng-model="filterBy.Ancestry" /></label></li>
-                        <li class="mh"><label style="display: block; width: 100%; height: 20px">MyHeritage<input type="checkbox" class="pull-right" name="filter" value="MyHeritage" ng-model="filterBy.MyHeritage"  /></label></li>
-                        <li class="fmp"><label style="display: block; width: 100%; height: 20px">FindMyPast<input type="checkbox" class="pull-right" name="filter" value="FindMyPast" ng-model="filterBy.FindMyPast" /></label></li>
+                        <li class="mh"><label style="display: block; width: 100%; height: 20px">Family Search<input type="checkbox" class="pull-right" name="filter" value="MyHeritage" ng-model="filterBy.FamilySearch"  /></label></li>
+                        <li class="fmp"><label style="display: block; width: 100%; height: 20px">Find My Past<input type="checkbox" class="pull-right" name="filter" value="FindMyPast" ng-model="filterBy.FindMyPast" /></label></li>
                     </ul>
                 </div>
 
@@ -47,16 +47,11 @@
                                 <img class="icon" ng-src="Content/img/{{rec.Vendor}}Icon.gif" />
                                 <h3 class="panel-title">{{rec.Source.Name}}</h3>
                             </div>
-                            <div class="panel-body">
+                            <div class="panel-body {{rec.Vendor}}">
                                 <p><b>Who:</b> {{rec.FirstName}} {{rec.LastName}}</p>
                                 <p><b>Where:</b> {{rec.Events[0].Place}}</p>
                                 <p><b>When:</b> {{rec.Events[0].Date}}</p>
                                 <p><b>Source:</b> <a target="_blank" ng-href="{{rec.Source.Link}}" title="{{rec.Source.Name}}">Go to record</a></p>
-                                <p>
-                                    <a target="_blank" ng-href="{{rec.Source.Link}}" title="{{rec.Vendor}}">
-                                        <img ng-src="Content/img/{{rec.Vendor}}50.jpg" />
-                                    </a>
-                                </p>
                             </div>
                         </div>
                     </div>
