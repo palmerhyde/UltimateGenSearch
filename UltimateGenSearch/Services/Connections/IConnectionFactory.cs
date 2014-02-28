@@ -1,3 +1,7 @@
+using System;
+using System.Collections.Generic;
+using System.Net;
+
 namespace UltimateGenSearch.Services.Connections
 {
     using System.Net.Http;
@@ -6,6 +10,6 @@ namespace UltimateGenSearch.Services.Connections
 
     public interface IConnectionFactory
     {
-        HttpClient CreateClient(ILogin login);
+        HttpClient CreateClient(ILogin login, Dictionary<Uri, IList<Cookie>> cookies);
     }
 }
