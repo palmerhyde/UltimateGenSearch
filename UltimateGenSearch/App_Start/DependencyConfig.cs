@@ -26,7 +26,11 @@ namespace UltimateGenSearch.App_Start
             Container.RegisterType<IScraper, AcomScraper>(
                 "AcomScraper",
                 new InjectionConstructor(new ResolvedParameter<IConnectionFactory>(), new ResolvedParameter<ILogin>("AcomLogin")));
-            Container.RegisterType<IScraper, FindMyPastScraper>("FindMyPastScraper");
+
+            Container.RegisterType<IScraper, FindMyPastScraper>(
+                "FindMyPastScraper",
+                new InjectionConstructor(new ResolvedParameter<IConnectionFactory>(), new ResolvedParameter<ILogin>("FindMyPastLogin")));
+            
             Container.RegisterType<IScraper, FamilySearchScraper>("FamilySearchScraper");
 
 
@@ -38,6 +42,7 @@ namespace UltimateGenSearch.App_Start
             Container.RegisterType<IConnectionFactory, ConnectionFactory>();
             Container.RegisterType<ILogin, NullLogin>();
             Container.RegisterType<ILogin, AcomLogin>("AcomLogin");
+            Container.RegisterType<ILogin, FindMyPastLogin>("FindMyPastLogin");
             Container.RegisterType<IUser, User>();
 
 
