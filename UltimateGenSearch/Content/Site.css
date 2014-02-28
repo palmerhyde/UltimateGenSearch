@@ -106,10 +106,6 @@ textarea {
     -webkit-transform-origin: 50% 39%;
     transform-origin:50% 39%;
     -ms-transform-origin:50% 39%; /* IE 9 */
-    -webkit-animation: spin .9s infinite linear;
-    -moz-animation: spin .9s infinite linear;
-    -o-animation: spin .9s infinite linear;
-    animation: spin .9s infinite linear;
 }
 
 @-moz-keyframes spin {
@@ -219,8 +215,8 @@ textarea {
 
 
 
-.panel.Ancestry .panel-heading ,
-.panel.FamilySearch .panel-heading,
-.panel.FindMyPast .panel-heading {
+.panel-accounts .panel.Ancestry .panel-heading ,
+.panel-accounts .panel.FamilySearch .panel-heading,
+.panel-accounts .panel.FindMyPast .panel-heading {
     min-height: 30px;
 }
