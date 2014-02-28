@@ -5,6 +5,7 @@
     using System.Configuration;
     using System.IO;
     using System.Web;
+    using System.Web.Hosting;
     using System.Web.Script.Serialization;
 
     using Microsoft.Ajax.Utilities;
@@ -83,7 +84,9 @@
         /// <returns></returns>
         private static string GetAccountPath(string accountName)
         {
-            return HttpContext.Current.Server.MapPath(string.Format("~/App_Data/{0}.json", accountName));
+            var fileName = string.Format("{0}.json", accountName);
+            var dirName = HostingEnvironment.MapPath("~/App_Data/");
+            return Path.Combine(dirName, fileName);
         }
 
         /// <summary>
