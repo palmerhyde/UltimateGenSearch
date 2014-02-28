@@ -45,7 +45,7 @@ namespace UltimateGenSearch.Services.Scrapers
 
             var queryString = string.Format(SEARCH_TEMPLATE, firstName, lastName, place, date);
 
-            using (var client = this.Factory.CreateClient(this.Login))
+            using (var client = this.Factory.CreateClient(this.Login, null))
             {
                 var response = client.GetAsync(queryString).Result;
                 if (response.IsSuccessStatusCode)

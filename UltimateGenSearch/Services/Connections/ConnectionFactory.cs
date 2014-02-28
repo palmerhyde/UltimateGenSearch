@@ -13,7 +13,7 @@
         private static IDictionary<string, CookieContainer> cachedCookies = new Dictionary<string, CookieContainer>();
         private static object lockObject = new object();
 
-        public HttpClient CreateClient(ILogin login)
+        public HttpClient CreateClient(ILogin login, Dictionary<Uri, IList<Cookie>> cookies)
         {
             var handler = new HttpClientHandler();
 
@@ -37,6 +37,18 @@
 
                 }
                 handler.CookieContainer = cookieContainer;
+            }
+
+            if (cookies != null)
+            {
+                foreach (var k in cookies)
+                {
+                    foreach (var cookie in k.Value)
+                    {
+                        handler.CookieContainer.Add(k.Key, cookie);
+                    }
+                }
+
             }
 
             return new HttpClient(handler);
