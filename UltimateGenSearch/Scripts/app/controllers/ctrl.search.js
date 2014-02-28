@@ -45,6 +45,25 @@
 		        $scope.searchLoading = false;
 		        $scope.showSearchPage = true;
 		        $scope.searchFailed = false;
+
+
+		        window.setTimeout(function () {
+		            $(".draggable").draggable({ revert: true, containment: ".searchResults" });
+		            $(".drop-area").droppable({
+		                accept: ".draggable",
+		                activeClass: "ui-state-hover",
+		                hoverClass: "ui-state-active",
+		                drop: function (event, ui) {
+		                    var ifr = $('.drop-area iframe');
+		                    ifr.attr('data-url', ui.draggable[0].attributes['data-url'].value);
+		                    ifr.attr('data-collection', ui.draggable[0].attributes['data-collection'].value);
+		                    ifr.attr('data-domain', ui.draggable[0].attributes['data-domain'].value);
+		                    ifr.attr('data-detail', ui.draggable[0].attributes['data-detail'].value);
+		                    $('.drop-area iframe').contents().find(".saveToAncestry").click();
+		                }
+		            });
+		        }, 500);
+
 		    })
 		    .error(function (data, status, headers, config) {
 		        $scope.searchLoading = false;

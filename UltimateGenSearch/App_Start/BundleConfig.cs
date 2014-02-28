@@ -42,6 +42,7 @@ namespace UltimateGenSearch
 
             bundles.Add(new ScriptBundle("~/bundles/app").IncludeDirectory(
                         "~/Scripts/app/", "*.js", true));
+
         }
     }
 }
