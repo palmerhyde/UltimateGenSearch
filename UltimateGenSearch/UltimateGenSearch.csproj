@@ -166,6 +166,7 @@
     <Compile Include="Services\Connections\IConnectionFactory.cs" />
     <Compile Include="Services\IAccountService.cs" />
     <Compile Include="Services\ISearchService.cs" />
+    <Compile Include="Services\Login\FamilySearchLogin.cs" />
     <Compile Include="Services\Login\FindMyPastLogin.cs" />
     <Compile Include="Services\Login\AcomLogin.cs" />
     <Compile Include="Services\Login\Account.cs" />
