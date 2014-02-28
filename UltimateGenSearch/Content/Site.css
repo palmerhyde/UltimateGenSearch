@@ -62,7 +62,7 @@ textarea {
 
 .panel .no-pad {
     padding: 0;
-    margin: 5px;
+    margin: 10px;
 }
 .panel.Ancestry .panel-heading {
     background-color: #d6e9c6;
@@ -202,4 +202,25 @@ textarea {
 .panel-body.FindMyPast::after {
     content: "";
     background: url(img/FindMyPast50.jpg) no-repeat;
+}
+
+.glyphicon.head-icon {
+    font-size: 30px;
+    right: 30px;
+    top: 15px;
+    color: #999;
+    position: absolute;
+}
+
+.row.panel-accounts {
+    padding: 20px;
+}
+
+
+
+
+.panel.Ancestry .panel-heading ,
+.panel.FamilySearch .panel-heading,
+.panel.FindMyPast .panel-heading {
+    min-height: 30px;
 }
