@@ -219,8 +219,8 @@ textarea {
 
 
 
-.panel.Ancestry .panel-heading ,
-.panel.FamilySearch .panel-heading,
-.panel.FindMyPast .panel-heading {
+.panel-accounts .panel.Ancestry .panel-heading ,
+.panel-accounts .panel.FamilySearch .panel-heading,
+.panel-accounts .panel.FindMyPast .panel-heading {
     min-height: 30px;
 }
