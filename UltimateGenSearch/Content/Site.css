@@ -67,7 +67,28 @@ textarea {
 .panel.Ancestry .panel-heading {
     background-color: #d6e9c6;
     background-image: none;
-    min-height: 72px;
+    /*color: #fff;
+    min-height: 72px;*/
+}
+
+.panel.Newspapers .panel-heading {
+    background-color: 	#7ec2ec;
+    background-image: none;
+}
+
+.panel.FindAGrave .panel-heading {
+    background-color: 	hotpink;
+    background-image: none;
+}
+
+.panel.Archives .panel-heading {
+    background-color: silver;
+    background-image: none;
+}
+
+.panel.Fold3 .panel-heading {
+    background-color: #c73c01;
+    background-image: none;
 }
 
 .panel.FamilySearch .panel-heading {
@@ -178,6 +199,10 @@ textarea {
 }
 
 .panel-body.Ancestry,
+.panel-body.Archives,
+.panel-body.FindAGrave,
+.panel-body.Newspapers,
+.panel-body.Fold3,
 .panel-body.FamilySearch,
 .panel-body.FindMyPast,
 .panel-body.MyHeritage,
@@ -194,6 +219,26 @@ textarea {
 .panel-body.Ancestry::after {
     content: "";
     background: url(img/Ancestry50.jpg) no-repeat;
+}
+
+.panel-body.FindAGrave::after {
+    content: "";
+    background: url(img/FindAGrave50.jpg) no-repeat;
+}
+
+.panel-body.Archives::after {
+    content: "";
+    background: url(img/ArchivesLogo.png) no-repeat;
+}
+
+.panel-body.Newspapers::after {
+    content: "";
+    background: url(img/NewspapersLogo.png) no-repeat;
+}
+
+.panel-body.Fold3::after {
+    content: "";
+    background: url(img/Fold3Logo.png) no-repeat;
 }
 
 .panel-body.FamilySearch::after {
@@ -275,4 +320,29 @@ textarea {
   font: 26px Monaco, MonoSpace;
   padding-top: 95px;
   text-align: center;
+}
+
+.img-name,
+.img-place,
+.img-manage,
+.img-date
+ {
+    top: 40px;
+    position: absolute;
+}
+
+.img-name {
+    left: 41px;
+}
+
+.img-place {
+    left: 263px;
+}
+
+.img-date {
+    left: 485px;
+}
+
+.img-manage {
+    right: 0px;
 }
