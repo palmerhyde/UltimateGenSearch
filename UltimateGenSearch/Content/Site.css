@@ -106,10 +106,6 @@ textarea {
     -webkit-transform-origin: 50% 39%;
     transform-origin:50% 39%;
     -ms-transform-origin:50% 39%; /* IE 9 */
-    -webkit-animation: spin .9s infinite linear;
-    -moz-animation: spin .9s infinite linear;
-    -o-animation: spin .9s infinite linear;
-    animation: spin .9s infinite linear;
 }
 
 @-moz-keyframes spin {
@@ -223,4 +219,22 @@ textarea {
 .panel-accounts .panel.FamilySearch .panel-heading,
 .panel-accounts .panel.FindMyPast .panel-heading {
     min-height: 30px;
+}
+
+.drop-area {
+    width: 95%;
+    height: 260px;
+    background-image: radial-gradient(center center, circle cover, #ffeda3, #ffc800);
+	background-image: -o-radial-gradient(center center, circle cover, #ffeda3, #ffc800);
+	background-image: -ms-radial-gradient(center center, circle cover, #ffeda3, #ffc800);
+	background-image: -moz-radial-gradient(center center, circle cover, #ffeda3, #ffc800);
+	background-image: -webkit-radial-gradient(center center, circle cover, #ffeda3, #ffc800);
+    border-radius:540%;
+    margin-left: 15px;
+}
+
+.drop-area h3 {
+  font: 26px Monaco, MonoSpace;
+  padding-top: 95px;
+  text-align: center;
 }
