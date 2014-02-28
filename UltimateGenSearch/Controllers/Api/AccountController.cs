@@ -11,6 +11,7 @@ namespace UltimateGenSearch.Controllers.Api
     using System.Web.Http;
 
     using UltimateGenSearch.Services;
+    using UltimateGenSearch.Services.Login;
 
     public class AccountController : ApiController
     {
@@ -36,6 +37,21 @@ namespace UltimateGenSearch.Controllers.Api
             {
                 return Request.CreateErrorResponse(HttpStatusCode.BadRequest, ex.Message);
             }
+        }
+
+        public HttpResponseMessage Post(Account account)
+        {
+            try
+            {
+                var res = _accountService.UpdateAccount(account);
+
+                return Request.CreateResponse(HttpStatusCode.OK, res);
+            }
+            catch (Exception ex)
+            {
+                return Request.CreateErrorResponse(HttpStatusCode.BadRequest, ex.Message);
+            }
+           
         }
 
     }

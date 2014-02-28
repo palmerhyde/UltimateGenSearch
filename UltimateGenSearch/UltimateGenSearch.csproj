@@ -199,6 +199,8 @@
     <Content Include="Content\fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Content\img\ancestry50.jpg" />
     <Content Include="Content\img\AncestryIcon.gif" />
+    <Content Include="Content\img\FamilySearch50.jpg" />
+    <Content Include="Content\img\FamilySearchIcon.gif" />
     <Content Include="Content\img\FindMyPast50.jpg" />
     <Content Include="Content\img\FindMyPastIcon.gif" />
     <Content Include="Content\img\MyHeritage50.jpg" />
@@ -852,7 +854,7 @@
     <VisualStudio>
       <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
         <WebProjectProperties>
-          <UseIIS>True</UseIIS>
+          <UseIIS>False</UseIIS>
           <AutoAssignPort>True</AutoAssignPort>
           <DevelopmentServerPort>51038</DevelopmentServerPort>
           <DevelopmentServerVPath>/</DevelopmentServerVPath>
