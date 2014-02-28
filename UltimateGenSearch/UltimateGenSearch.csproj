@@ -796,6 +796,7 @@
     <Content Include="Content\fonts\glyphicons-halflings-regular.woff" />
     <Content Include="App_Data\Ancestry.json" />
     <Content Include="App_Data\FindMyPast.json" />
+    <Content Include="App_Data\FamilySearch.json" />
     <None Include="Scripts\libs\jquery\jquery-1.9.1.intellisense.js" />
     <Content Include="Scripts\libs\jquery\jquery-1.9.1.js" />
     <Content Include="Scripts\libs\jquery\jquery-1.9.1.min.js" />
