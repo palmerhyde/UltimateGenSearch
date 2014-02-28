@@ -148,6 +148,7 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Bootstrapper.cs" />
+    <Compile Include="Controllers\Api\AccountController.cs" />
     <Compile Include="Controllers\Api\SearchController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Global.asax.cs">
@@ -158,10 +159,12 @@
     <Compile Include="Models\Record.cs" />
     <Compile Include="Models\Source.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Services\AccountService.cs" />
     <Compile Include="Services\Aggregator\IAggregator.cs" />
     <Compile Include="Services\Aggregator\SimpleAggregator.cs" />
     <Compile Include="Services\Connections\ConnectionFactory.cs" />
     <Compile Include="Services\Connections\IConnectionFactory.cs" />
+    <Compile Include="Services\IAccountService.cs" />
     <Compile Include="Services\ISearchService.cs" />
     <Compile Include="Services\Login\AcomLogin.cs" />
     <Compile Include="Services\Login\Account.cs" />
@@ -169,6 +172,7 @@
     <Compile Include="Services\Login\ILogin.cs" />
     <Compile Include="Services\Login\IUser.cs" />
     <Compile Include="Services\Login\NullLogin.cs" />
+    <Compile Include="Services\Login\User.cs" />
     <Compile Include="Services\Login\VendorNames.cs" />
     <Compile Include="Services\Scrapers\AcomScraper.cs" />
     <Compile Include="Services\Scrapers\BaseScraper.cs" />
@@ -787,6 +791,8 @@
     <Content Include="Content\fonts\glyphicons-halflings-regular.eot" />
     <Content Include="Content\fonts\glyphicons-halflings-regular.ttf" />
     <Content Include="Content\fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="App_Data\Ancestry.json" />
+    <Content Include="App_Data\FindMyPast.json" />
     <None Include="Scripts\libs\jquery\jquery-1.9.1.intellisense.js" />
     <Content Include="Scripts\libs\jquery\jquery-1.9.1.js" />
     <Content Include="Scripts\libs\jquery\jquery-1.9.1.min.js" />
@@ -820,7 +826,6 @@
     <Content Include="Scripts\version.json" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="App_Data\" />
     <Folder Include="Scripts\app\models\" />
     <Folder Include="Scripts\app\views\" />
   </ItemGroup>
