@@ -46,7 +46,7 @@
         <h3>Record not found. Should I fake it? (Y/N)</h3>
     </div>
 
-    <div class="container-fluid" ng-show="showSearchPage">
+    <div class="container-fluid searchResults" ng-show="showSearchPage">
         <div class="row">
 
             <div class="col-sm-2 sidebar">
@@ -56,13 +56,23 @@
                     <li class="mh"><label style="display: block; width: 100%; height: 20px">Family Search<input type="checkbox" class="pull-right" name="filter" value="MyHeritage" ng-model="filterBy.FamilySearch" /></label></li>
                     <li class="fmp"><label style="display: block; width: 100%; height: 20px">Find My Past<input type="checkbox" class="pull-right" name="filter" value="FindMyPast" ng-model="filterBy.FindMyPast" /></label></li>
                 </ul>
+
+                <div class="drop-area">
+                    <h3>Drop Record here to Save to Ancestry</h3>
+                    <div style="display:none;">
+                        <div id="saveBtn" class="saveToAncestry" data-domain="your_url.com" data-url="http://www.your_url.com/path/to/resource/" data-collection="1940 Census Record" data-detail="These records cover the areas between Casper, WY to Denver, CO during the 1940 Census." data-width="200"></div>
+                    </div>
+                </div>
+
             </div>
 
 
             <div class="col-sm-10 panel">
                 <div class="row">
-                    <div class="panel panel-default col-sm-2 no-pad {{rec.Vendor}}" ng-repeat="rec in records track by $index">
-                        <div class="panel-heading">
+                    <div class="panel panel-default col-sm-2 no-pad {{rec.Vendor}} draggable" ng-repeat="rec in records track by $index"
+                         data-domain="{{rec.Vendor}}.com" data-url="{{rec.Source.Link}}" data-collection="{{rec.Source.Name}}" 
+                         data-detail="{{rec.FirstName}} {{rec.LastName}}, {{rec.Events[0].Place}}, {{rec.Events[0].Date}}">
+                        <div class=" panel-heading">
                             <img class="icon" ng-src="Content/img/{{rec.Vendor}}Icon.gif" />
                             <h3 class="panel-title">{{rec.Source.Name}}</h3>
                         </div>
@@ -80,7 +90,7 @@
 
     <div class="container-fluid" ng-show="showAccountPage">
         <div class="row panel-accounts">
-            <div class="col-sm-10 panel ">
+            <div class="col-sm-12 panel ">
                 <h3>My Accounts</h3>
                 <div class="row">
                     <div class="panel panel-default col-sm-2 no-pad {{acc.Name}}" ng-repeat="acc in myAccounts track by $index">
