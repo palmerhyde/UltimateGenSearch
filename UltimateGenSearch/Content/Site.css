@@ -9,6 +9,8 @@ header, footer, nav, section {
     display: block;
 }
 
+.spacer {  margin-top: 100px; margin-left: 150px; }
+
 
 /* Styles for basic forms
 -----------------------------------------------------------*/

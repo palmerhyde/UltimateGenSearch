@@ -228,6 +228,7 @@
     <Content Include="Content\img\GeniIcon.gif" />
     <Content Include="Content\img\irishGenealogy50.JPG" />
     <Content Include="Content\img\IrishGenealogyIcon.gif" />
+    <Content Include="Content\img\logo.JPG" />
     <Content Include="Content\img\MyHeritage50.jpg" />
     <Content Include="Content\img\MyHeritageIcon.gif" />
     <Content Include="Content\img\NationalArchives50.jpg" />
@@ -560,6 +561,7 @@
     <Content Include="Scripts\i18n\angular-locale_zh.js" />
     <Content Include="Scripts\i18n\angular-locale_zu-za.js" />
     <Content Include="Scripts\i18n\angular-locale_zu.js" />
+    <None Include="Properties\PublishProfiles\Whoogle.pubxml" />
     <None Include="Scripts\libs\jquery\jquery-2.1.0.intellisense.js" />
     <Content Include="Scripts\libs\jquery\jquery-2.1.0.js" />
     <Content Include="Scripts\libs\jquery\jquery-2.1.0.min.js" />
